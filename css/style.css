@@ -1,0 +1,618 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #4891ff;
+  --light-color: #f4f4f6;
+  --dark-color: #111;
+  /* green hero colors */
+  --saimong-bg-color: #e8f7e8; 
+  --saimong-profession-box-color: #b6d5b6; 
+  /* who i am section colors */
+  --who-i-am-bg: #e8f7e8; 
+  --who-i-am-bar: #b6d5b6; 
+  /* accent green for text (and buttons now) */
+  --saimong-accent-green: #b6d5b7; 
+  /* new variable for the primary button color */
+  --saimong-button-color: #b6d5b7;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* navbar: updated to match hero background color */
+.navbar {
+  background: var(--saimong-bg-color); 
+  padding: 20px;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+/* style for text logo (kept empty in HTML, but here for reference if text returns) */
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.navbar .main-menu ul {
+  display: flex;
+}
+
+.navbar ul li a {
+  padding: 10px 20px;
+  display: block;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.navbar ul li a:hover {
+  color: var(--primary-color);
+}
+
+.navbar ul li a i {
+  margin-right: 10px;
+}
+
+.navbar ul li:last-child a {
+  margin-left: 10px;
+}
+
+/* saimong hseng hero section - custom styling */
+.hero-saimong {
+  background-color: var(--saimong-bg-color);
+  padding: 80px 0;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-container-saimong {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap; 
+}
+
+.hero-image-wrapper {
+  flex: 0 0 auto;
+  max-width: 280px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.hero-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.profile-pfp {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+
+.hero-text-wrapper {
+  flex: 0 0 auto; 
+  text-align: left; 
+  margin-left: 20px;
+}
+
+.hero-heading-saimong {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin: 0;
+  color: var(--dark-color);
+  font-weight: 700;
+}
+
+.profession-box {
+  display: inline-block;
+  background-color: var(--saimong-profession-box-color);
+  color: #333;
+  padding: 8px 20px;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.hero-text-saimong {
+  font-size: 1.5rem;
+  color: #555;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* video (now what i do) */
+.video {
+  padding: 40px 0 40px;
+}
+
+.video .video-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video .video-preview {
+  margin-bottom: 20px;
+}
+
+/* apply accent color to the heading and text in "what i do" section */
+.video .video-heading {
+    color: var(--saimong-accent-green);
+}
+.video .video-content .text-md {
+    color: var(--saimong-accent-green) !important; 
+    font-weight: 500;
+}
+
+
+/* who i am section (new custom block) */
+.who-i-am-section {
+    background-color: var(--who-i-am-bg);
+    padding: 80px 0;
+}
+
+.who-i-am-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* align top to match example */
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.who-i-am-content {
+    flex: 2;
+    max-width: 600px;
+}
+
+.who-i-am-heading {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.styled-bar {
+    background-color: var(--who-i-am-bar);
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    /* use an arbitrary large value on the right to extend the bar past the container */
+    margin-right: -1000px; 
+    padding-right: 1000px;
+}
+
+.styled-bar-text {
+    margin: 0;
+    font-weight: 600;
+}
+
+.who-i-am-body {
+    margin-bottom: 25px;
+    line-height: 1.7;
+    color: #444;
+}
+
+.who-i-am-image-wrapper {
+    flex: 1;
+    max-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    /* positioning to match image example */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+    padding: 10px;
+    background-color: #fff;
+    /* pushes image down relative to the content */
+    margin-top: 50px; 
+}
+
+.who-i-am-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* footer: simplified structure and styling */
+.footer {
+  padding: 80px 0; 
+  text-align: center; /* center the text/content block */
+}
+
+/* container class to center the whole footer content block */
+.footer .footer-simple-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-button-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* social button adjustments to ensure visibility on black */
+.footer-button-group .btn-primary {
+    /* override the default button text color which might be getting lost */
+    color: var(--dark-color) !important;
+}
+
+/* make sure the icon inside the button is colored correctly */
+.footer-button-group .btn-primary i {
+    color: var(--dark-color) !important; 
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* removing old unused footer styles */
+.footer-left-aligned-content,
+.footer-icons-group,
+.footer-email-link,
+.footer-unlinked-icon, 
+.footer-grid,
+.footer h4,
+.footer ul li,
+.footer a,
+.footer .card,
+.footer input[type='email'] {
+    /* selectively hiding elements that shouldn't be visible/used in the new structure */
+    /* the <a> tags used as buttons have their display handled by the .btn class */
+    display: none !important; 
+}
+.footer-button-group a {
+    /* ensure the new buttons are visible and not hidden by the general a selector */
+    display: inline-block !important;
+}
+
+
+/* utility classes */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-sm {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* card */
+.card {
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* buttons */
+.btn {
+  display: inline-block;
+  padding: 13px 20px;
+  background: var(--light-color);
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* button primary color updated to the accent green, and text color changed to dark (for contrast) */
+.btn-primary {
+  background: var(--saimong-button-color); 
+  color: var(--dark-color);
+}
+.btn-primary:hover {
+    color: var(--dark-color);
+}
+
+.btn-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* text classes */
+.text-xxl {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 40px 0 20px;
+}
+
+.text-xl {
+  font-size: 2.2rem;
+  line-height: 1.4;
+  font-weight: normal;
+  margin: 40px 0 20px;
+}
+
+.text-lg {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: normal;
+  margin: 30px 0 20px;
+}
+
+.text-md {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-weight: normal;
+  margin: 20px 0 10px;
+}
+
+.text-sm {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-weight: normal;
+  margin: 10px 0 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* background */
+.bg-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.bg-light {
+  background: var(--light-color);
+  color: #333;
+}
+
+.bg-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.bg-black {
+  background: #000;
+  color: #fff;
+}
+
+/* hamburger button: hiding the redundant element */
+.hamburger-button {
+  display: none; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.hamburger-button .hamburger-line {
+  width: 30px;
+  height: 3px;
+  background: #333;
+  margin: 6px 0;
+}
+
+/* mobile menu: hiding the redundant, visible links. it will show correctly on mobile view only. */
+.mobile-menu {
+  display: none; 
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 250px;
+  height: 100%;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+  right: 0;
+  display: block; 
+}
+
+.mobile-menu ul {
+  margin-top: 100px;
+  padding-right: 10px;
+}
+
+.mobile-menu ul li {
+  margin: 10px 0;
+}
+
+.mobile-menu ul li a {
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+/* media queries */
+@media (max-width: 960px) {
+  /* hero section adjustments for tablets */
+  .hero-container-saimong {
+    flex-direction: column; 
+    gap: 30px;
+    text-align: center;
+  }
+  .hero-text-wrapper {
+    text-align: center;
+  }
+  .hero-heading-saimong {
+    font-size: 3rem;
+  }
+  .profession-box {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* who i am section tablet adjustments */
+  .who-i-am-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .who-i-am-content {
+    max-width: 100%;
+  }
+
+  .who-i-am-heading {
+    text-align: center;
+  }
+
+  .styled-bar {
+    /* remove the wide padding/margin trick on mobile */
+    margin-right: 0;
+    padding-right: 25px;
+    text-align: center;
+  }
+
+  .who-i-am-image-wrapper {
+    margin-top: 30px;
+  }
+
+
+  .text-xxl {
+    font-size: 2.5rem;
+  }
+
+  .testimonials .testimonials-heading {
+    width: 100%;
+  }
+
+  /* enable hamburger and mobile menu on tablet/mobile views */
+  .navbar .main-menu {
+    display: none;
+  }
+
+  .navbar .hamburger-button {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: block; 
+  }
+}
+
+@media (max-width: 670px) {
+  /* inherited mobile styles */
+  
+  /* hero section adjustments for mobile */
+  .hero-saimong {
+    padding: 50px 0;
+  }
+  .hero-container-saimong {
+    gap: 20px;
+  }
+  .hero-image-wrapper {
+    max-width: 180px; 
+  }
+  .hero-heading-saimong {
+    font-size: 2.5rem;
+  }
+  .hero-text-saimong {
+    font-size: 1.2rem;
+  }
+  /* end hero mobile adjustments */
+
+  .testimonials .testimonials-heading {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* .testimonials .testimonials-grid, removed */
+  /* .pricing .pricing-grid, removed */
+  .footer .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer .card {
+    margin-right: 0;
+  }
+
+  .footer .footer-grid > div {
+    text-align: center;
+  }
+
+  /* text */
+  .text-xl {
+    font-size: 1.9rem;
+  }
+
+  .text-lg {
+    font-size: 1.5rem;
+  }
+
+  .text-md {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .text-xxl {
+    font-size: 2rem;
+  }
+  .hero-heading-saimong {
+    font-size: 2rem;
+  }
+  .hero-text-saimong {
+    font-size: 1rem;
+  }
+  .profession-box {
+    font-size: 0.9rem;
+    padding: 6px 15px;
+  }
+}
